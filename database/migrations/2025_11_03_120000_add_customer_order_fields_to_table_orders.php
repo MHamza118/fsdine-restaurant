@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('table_orders', function (Blueprint $table) {
             if (!Schema::hasColumn('table_orders', 'total_amount')) {
-                $table->decimal('total_amount', 10, 2)->nullable()->after('order_notes');
+                $table->decimal('total_amount', 10, 2)->nullable()->after('notes');
             }
             if (!Schema::hasColumn('table_orders', 'submission_source')) {
                 $table->string('submission_source')->default('admin_manual')->after('total_amount');
